@@ -1,0 +1,25 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: toshi-farm
+            expected-sender: STGDS0Y17973EN5TCHNHGJJ9B31XWQ5YXBQ0KQ2Y
+            cost: 40860
+            path: contracts/toshi-farm.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: usdcx
+            expected-sender: STGDS0Y17973EN5TCHNHGJJ9B31XWQ5YXBQ0KQ2Y
+            cost: 2900
+            path: contracts/usdcx.clar
+            anchor-block-only: true
+            clarity-version: 2
+      epoch: "2.2"
