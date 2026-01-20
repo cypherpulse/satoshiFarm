@@ -1,0 +1,29 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Clarinet
+clarityContract/.clarinet/
+clarityContract/deployments/*.sqlite
+clarityContract/deployments/*.sqlite-journal
+clarityContract/deployments/*.log
+clarityContract/deployments/*.bak
+
+# Solidity (future)
+solidityContract/artifacts/
+solidityContract/cache/
+solidityContract/node_modules/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+*.ps1
