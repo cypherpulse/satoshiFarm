@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ToshiFarm Design System - Stacks Orange Theme */
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 20 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 222 47% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 35 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 20 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom ToshiFarm colors */
+    --stacks-orange: 20 100% 50%;
+    --stacks-orange-hover: 14 100% 50%;
+    --usdcx-gold: 45 100% 50%;
+    --bitcoin-orange: 33 100% 50%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 20 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 222 47% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 35 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 20 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glow-orange {
+    box-shadow: 0 0 20px hsl(20 100% 50% / 0.4), 0 0 40px hsl(20 100% 50% / 0.2);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4), 0 0 40px hsl(45 100% 50% / 0.2);
+  }
+
+  .text-gradient-orange {
+    background: linear-gradient(135deg, hsl(20 100% 50%) 0%, hsl(33 100% 50%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(20 100% 50% / 0.4), 0 0 40px hsl(20 100% 50% / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(20 100% 50% / 0.6), 0 0 60px hsl(20 100% 50% / 0.3);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
