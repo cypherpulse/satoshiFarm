@@ -5,7 +5,7 @@ authors = []
 telemetry = true
 cache_dir = "./.cache"
 
-[contracts.toshi-farm]
+[contracts.toshi-farm-v2]
 path = "contracts/toshi-farm.clar"
 epoch = "2.2"
 
