@@ -69,7 +69,7 @@ plan:
             path: contracts/usdcx.clar
             clarity-version: 2
         - emulated-contract-publish:
-            contract-name: toshi-farm
+            contract-name: toshi-farm-v2
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/toshi-farm.clar
             clarity-version: 2
