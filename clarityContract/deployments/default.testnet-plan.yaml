@@ -9,9 +9,9 @@ plan:
     - id: 0
       transactions:
         - contract-publish:
-            contract-name: toshi-farm
+            contract-name: toshi-farm-v2
             expected-sender: STGDS0Y17973EN5TCHNHGJJ9B31XWQ5YXBQ0KQ2Y
-            cost: 40860
+            cost: 41480
             path: contracts/toshi-farm.clar
             anchor-block-only: true
             clarity-version: 2
