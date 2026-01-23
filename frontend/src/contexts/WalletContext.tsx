@@ -258,29 +258,40 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const withdrawUsdcx = useCallback(async () => {
     if (!isConnected || !address) throw new Error("Wallet not connected");
 
-    // Check if user has USDCx earnings before attempting withdrawal
-    const earnings = await fetchSellerEarnings(address);
-    console.log("USDCx earnings:", earnings.usdcx.toString());
-    if (earnings.usdcx <= BigInt(0)) {
-      throw new Error("No USDCx earnings available to withdraw");
-    }
+    try {
+      // Check if user has USDCx earnings before attempting withdrawal
+      const earnings = await fetchSellerEarnings(address);
+      console.log("USDCx earnings:", earnings.usdcx.toString());
+      if (earnings.usdcx <= BigInt(0)) {
+        throw new Error("No USDCx earnings available to withdraw");
+      }
 
-    console.log("Attempting USDCx withdrawal with earnings:", earnings.usdcx.toString());
-    const response = await request('stx_callContract', {
-      contract: `${MARKETPLACE_CONTRACT_ADDRESS}.${MARKETPLACE_CONTRACT_NAME}`,
-      functionName: "withdraw-usdcx",
-      functionArgs: [],
-      network: STACKS_TESTNET.chainId === 2147483648 ? 'testnet' : 'mainnet',
-      postConditionMode: 'allow'
-    });
-    console.log("USDCx withdrawal transaction submitted:", response.txid);
-    addTransaction({
-      id: response.txid,
-      type: 'withdraw-usdcx',
-      amount: Number(earnings.usdcx),
-      timestamp: new Date(),
-      status: 'pending'
-    });
+      console.log("Attempting USDCx withdrawal with earnings:", earnings.usdcx.toString());
+      console.log("Network chainId:", STACKS_TESTNET.chainId);
+      console.log("Using network:", STACKS_TESTNET.chainId === 2147483648 ? 'testnet' : 'mainnet');
+
+      const response = await request('stx_callContract', {
+        contract: `${MARKETPLACE_CONTRACT_ADDRESS}.${MARKETPLACE_CONTRACT_NAME}`,
+        functionName: "withdraw-usdcx",
+        functionArgs: [],
+        network: STACKS_TESTNET.chainId === 2147483648 ? 'testnet' : 'mainnet',
+        postConditionMode: 'allow'
+      });
+
+      console.log("USDCx withdrawal response:", response);
+      console.log("USDCx withdrawal transaction submitted:", response.txid);
+
+      addTransaction({
+        id: response.txid,
+        type: 'withdraw-usdcx',
+        amount: Number(earnings.usdcx),
+        timestamp: new Date(),
+        status: 'pending'
+      });
+    } catch (error) {
+      console.error("USDCx withdrawal error:", error);
+      throw error;
+    }
   }, [isConnected, address, addTransaction, fetchSellerEarnings]);
 
   return (
