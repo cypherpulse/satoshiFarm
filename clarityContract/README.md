@@ -137,7 +137,7 @@ Lists a new item for sale. Requires name, description, image URL, price, and qua
 ```clarity
 (buy-item uint uint bool) -> (response bool uint)
 ```
-Purchases items. Parameters: item-id, quantity, use-stx (true for STX, false for USDCx).
+Purchases items. Parameters: item-id, quantity, use-stx (true for STX direct transfer, false for USDCx escrow to treasury).
 
 #### `withdraw-stx`
 ```clarity
