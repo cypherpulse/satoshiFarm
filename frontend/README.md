@@ -1,5 +1,5 @@
 
-# SatoshiFarm Frontend
+# Satoshi Farm Frontend
 
 ![Build Status](https://img.shields.io/github/actions/workflow/status/your-org/satoshifarm-frontend/ci.yml?branch=main)
 ![License](https://img.shields.io/github/license/your-org/satoshifarm-frontend)
@@ -12,7 +12,7 @@
 
 ## Description
 
-SatoshiFarm is a professional, high-performance decentralized application (dApp) frontend for blockchain-based farming and digital asset marketplaces. It is designed for clarity, scalability, and ease of use, providing a seamless interface for interacting with smart contracts and decentralized protocols. The project leverages modern web technologies and a modular architecture to ensure maintainability and rapid development.
+Satoshi Farm is a professional, high-performance decentralized application (dApp) frontend for blockchain-based farming and digital asset marketplaces. It is designed for clarity, scalability, and ease of use, providing a seamless interface for interacting with smart contracts and decentralized protocols. The project leverages modern web technologies and a modular architecture to ensure maintainability and rapid development.
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ SatoshiFarm is a professional, high-performance decentralized application (dApp)
 
 ## Table of Contents
 
-- [SatoshiFarm Frontend](#satoshifarm-frontend)
+- [Satoshi Farm Frontend](#satoshi-farm-frontend)
   - [Description](#description)
   - [Tech Stack](#tech-stack)
   - [Table of Contents](#table-of-contents)
@@ -49,7 +49,7 @@ SatoshiFarm is a professional, high-performance decentralized application (dApp)
 
 ## Project Overview
 
-SatoshiFarm is a decentralized marketplace on the Stacks blockchain, empowering farmers to sell agricultural products directly to buyers and accept payments in STX and USDCx stablecoin. Built for transparency, security, and ease of use, SatoshiFarm removes intermediaries and enables real-world commerce on Web3 rails.
+Satoshi Farm is a decentralized marketplace on the Stacks blockchain, empowering farmers to sell agricultural products directly to buyers and accept payments in STX and USDCx stablecoin. Built for transparency, security, and ease of use, Satoshi Farm removes intermediaries and enables real-world commerce on Web3 rails.
 
 ## Features
 
