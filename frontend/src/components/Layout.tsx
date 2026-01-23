@@ -14,7 +14,17 @@ const Layout = ({ children }: LayoutProps) => {
       </main>
       <footer className="border-t border-border py-6 mt-auto">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>ToshiFarm – Built for Programming USDCx on Stacks Builder Challenge</p>
+          <p>
+            Built for Programming USDCx{" "}
+            <a
+              href="https://hermes-sage.vercel.app/transfer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              on Hermes
+            </a>
+          </p>
           <p className="mt-1">Powered by Stacks Testnet • STX & USDCx Payments</p>
         </div>
       </footer>
