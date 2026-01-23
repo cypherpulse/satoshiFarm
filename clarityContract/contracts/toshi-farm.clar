@@ -32,7 +32,7 @@
       (var-set next-item-id (+ item-id u1))
       (ok item-id))))
 
-;; Buy items - payment goes to the treasury
+;; Buy items - STX direct, USDCx to treasury
 (define-public (buy-item (item-id uint) (quantity-to-buy uint) (use-stx bool))
   (let ((item (unwrap! (map-get? satoshi-farm-items item-id) (err u102)))
         (total-cost (* (get price item) quantity-to-buy))
@@ -40,7 +40,7 @@
     ;; Ensure item is active and has enough quantity
     (asserts! (get active item) (err u102))
     (asserts! (>= (get quantity item) quantity-to-buy) (err u103))
-    ;; Transfer payment: STX or USDCx
+    ;; Transfer payment: STX direct to seller, USDCx to treasury
     (if use-stx
       (try! (stx-transfer? total-cost tx-sender seller))
       (try! (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.usdcx transfer total-cost tx-sender (as-contract tx-sender) none)))
@@ -62,13 +62,14 @@
     (map-delete seller-stx-earnings tx-sender)
     (ok earnings)))
 
-;; Withdraw USDCx earnings
+;; Withdraw USDCx earnings from treasury
 (define-public (withdraw-usdcx)
-  (let ((earnings (default-to u0 (map-get? seller-usdcx-earnings tx-sender))))
+  (let ((earnings (default-to u0 (map-get? seller-usdcx-earnings tx-sender)))
+        (user tx-sender))
     ;; Only farmers with earnings can withdraw
     (asserts! (> earnings u0) (err u104))
     ;; Transfer USDCx from treasury to seller
-    (try! (as-contract (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.usdcx transfer earnings tx-sender tx-sender none)))
+    (try! (as-contract (contract-call? 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.usdcx transfer earnings tx-sender user none)))
     ;; Reset balance to zero
     (map-delete seller-usdcx-earnings tx-sender)
     (ok earnings)))
