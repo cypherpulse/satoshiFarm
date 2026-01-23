@@ -47,7 +47,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // ToshiFarm custom colors
+        // Satoshi Farm custom colors
         stacks: {
           orange: "hsl(var(--stacks-orange))",
           "orange-hover": "hsl(var(--stacks-orange-hover))",
