@@ -26,7 +26,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl font-bold">
             <Bitcoin className="h-8 w-8 text-primary" />
-            <span className="text-gradient-orange">ToshiFarm</span>
+            <span className="text-gradient-orange">Satoshi Farm</span>
           </Link>
 
           {/* Desktop Navigation */}
