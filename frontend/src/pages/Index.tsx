@@ -86,6 +86,18 @@ const Index = () => {
           <p className="text-sm text-accent">
             Pay with STX or USDCx • Built for the paying with USDCx Hermes Challenge
           </p>
+          <p className="text-sm text-accent mt-2">
+            You can get or bridge their testnet from{" "}
+            <a
+              href="https://hermes-sage.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Hermes
+            </a>{" "}
+            for testing
+          </p>
         </div>
       </div>
 
