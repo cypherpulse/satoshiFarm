@@ -26,6 +26,17 @@ const Layout = ({ children }: LayoutProps) => {
             </a>
           </p>
           <p className="mt-1">Powered by Stacks Testnet • STX & USDCx Payments</p>
+          <p className="mt-1">
+            Contract:{" "}
+            <a
+              href="https://explorer.hiro.so/txid/STGDS0Y17973EN5TCHNHGJJ9B31XWQ5YXBQ0KQ2Y.toshi-farm-v2?chain=testnet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              View on Hiro Explorer
+            </a>
+          </p>
         </div>
       </footer>
     </div>
