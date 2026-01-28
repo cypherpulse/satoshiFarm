@@ -1,16 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/api/(.*)",
-      "destination": "https://your-satoshi-farm-api.com/api/$1",
-      "has": [],
-      "permanent": false
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html",
-      "has": [],
-      "permanent": false
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
