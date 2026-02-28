@@ -27,3 +27,4 @@ Thumbs.db
 .env
 .env.*
 *.ps1
+*.sh
